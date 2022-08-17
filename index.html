@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css" />
+  
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <!-- Adding the Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Sidebar Overlay -->
+    <div id="sideBarOverlay">
+      
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <img class="menu-button" id="close-menu" onclick="toggleSidebar()" src="images/icon-close-menu.svg" alt="Click for Menu" />
+      <br>
+      <div class="sidebar-items">
+        <div class="sidebar-option">
+          <a href="#" onclick="toggleFeatures()">Features</a> &nbsp<img src="images/icon-arrow-down.svg" alt="down-arrow">
+
+          <div class="features-accordion">
+            <div class="accordion-item">
+              <img src="images/icon-todo.svg" /> &nbsp <a href="#">Todo List</a>
+            </div>
+            <div class="accordion-item">
+              <img src="images/icon-calendar.svg" /> &nbsp <a href="#">Calender</a>
+            </div>
+            <div class="accordion-item">
+              <img src="images/icon-reminders.svg" /> &nbsp <a href="#">Reminders</a>
+            </div>
+            <div class="accordion-item">
+              <img src="images/icon-planning.svg" /> &nbsp <a href="#">Planning</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="sidebar-option">
+          <a href="#" onclick="toggleCompany()">Company</a> &nbsp<img src="images/icon-arrow-down.svg" alt="down-arrow">
+
+          <div class="company-accordion">
+            <div class="accordion-item">
+              <a href="#">History</a>
+            </div>
+            <div class="accordion-item">
+              <a href="#">Our Team</a>
+            </div>
+            <div class="accordion-item">
+              <a href="#">Blog</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sidebar-option">
+          <a href="#">Careers</a>
+        </div>
+        <div class="sidebar-option">
+          <a href="#">About</a>
+        </div>
+        <div class="login">
+            <a href="#">Login</a>
+            <a class="sidebar-option sidebar-register" href="#">Register</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-wrapper">
+
+      <!-- Header Section -->
+      <header>
+        <div class="header">
+          <div class="header-left">
+            <img style="padding: 1.8rem; margin-right: 1rem;" src="images/logo.svg" alt="site-logo" />
+            <div class="header-option">
+              <a href="#">Features</a> &nbsp<img src="images/icon-arrow-down.svg" alt="down-arrow">
+
+              <!-- <div id="features-dropdown">
+                <div class="accordion-item">
+                  <img src="images/icon-todo.svg" /> &nbsp <a href="#">Todo List</a>
+                </div>
+                <div class="accordion-item">
+                  <img src="images/icon-calendar.svg" /> &nbsp <a href="#">Calender</a>
+                </div>
+                <div class="accordion-item">
+                  <img src="images/icon-reminders.svg" /> &nbsp <a href="#">Reminders</a>
+                </div>
+                <div class="accordion-item">
+                  <img src="images/icon-planning.svg" /> &nbsp <a href="#">Planning</a>
+                </div>
+              </div> -->
+
+            </div>
+            <div class="header-option">
+              <a href="#">Company</a> &nbsp<img src="images/icon-arrow-down.svg" alt="down-arrow">
+            </div>
+            <div class="header-option">
+              <a href="#">Careers</a>
+            </div>
+            <div class="header-option">
+              <a href="#">About</a>
+            </div>
+          </div>
+          <div class="header-right">
+            <a href="#" class="header-option">Login</a>
+            <a href="#" class="header-option register">Register</a>
+            <img class="menu-button" id="open-menu" onclick="toggleSidebar()" src="images/icon-menu.svg" alt="Click for Menu" />
+          </div>
+        </div>
+      </header>
+      <!-- Header Section Ended -->
+
+      <!-- Main Content -->
+      <div class="main-container">
+
+        <!-- Top side for responsive -->
+        <div class="main-top">
+          <img src="images/image-hero-mobile.png" alt="Landing Page Image" />
+        </div>
+
+        <!-- Left Side -->
+        <div class="main-left">
+          <div class="left-content">
+            <h1>Make<br class="br-tag"><span class="br-space">&nbsp</span>remote work</h1>
+            <p>Get Your team in sync, no matter your location. Streamline Processes, create team rituals, and watch productivity soar.</p>
+            <button class="primary-button">Learn More</button>
+            <div class="clients">
+              <img src="images/client-databiz.svg" alt="Databiz-logo" />
+              <img src="images/client-audiophile.svg" alt="AudioPhile-logo" />
+              <img src="images/client-meet.svg" alt="Meet-logo" />
+              <img src="images/client-maker.svg" alt="Maker-logo" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="main-right">
+          <img src="images/image-hero-desktop.png" alt="Landing Page Image" />
+        </div>
+
+      </div>
+      <!-- Main Content Ended -->
+
+    </div>
+
+    <!-- Script for the navigation -->
+    <script>
+
+      // Sidebar Accordions
+      // To toggle features Accordion in sidebar
+      function toggleFeatures() {
+        let accordion = document.getElementsByClassName('features-accordion')[0];
+        if (accordion.style.display == '' || accordion.style.display == 'none') {
+          accordion.style.display = 'block';
+        } else {
+          accordion.style.display = 'none';
+        }
+      }
+      // To toggle features Accordion in sidebar
+      function toggleCompany() {
+        let accordion = document.getElementsByClassName('company-accordion')[0];
+        if (accordion.style.display == '' || accordion.style.display == 'none') {
+          accordion.style.display = 'block';
+        } else {
+          accordion.style.display = 'none';
+        }
+      }
+
+      // To toggle the Sidebar
+      function toggleSidebar() {
+        let sidebar = document.getElementById('sidebar');
+        if (sidebar.style.display == '' || sidebar.style.display == 'none') {
+          sidebar.style.display = 'block';
+          document.getElementById('sideBarOverlay').style.display = 'block';
+        } else {
+          sidebar.style.display = 'none';
+          document.getElementById('sideBarOverlay').style.display = 'none';
+        }
+      }
+    </script>
+</body>
+</html>
