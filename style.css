@@ -110,7 +110,7 @@ a {
 /* Accordions */
 .features-accordion, .company-accordion {
     margin-top: 3%;
-    /* display: none; */
+    display: none;
 }
 .accordion-item {
     margin: 2%;
@@ -280,5 +280,8 @@ a {
     }
     .main-top img {
         max-width: 100%;
+    }
+    .clients img {
+        margin: 1rem 0;
     }
 }
