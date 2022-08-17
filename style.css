@@ -281,6 +281,11 @@ a {
     .main-top img {
         max-width: 100%;
     }
+    .clients {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
     .clients img {
         margin: 1rem 0;
     }
