@@ -17,9 +17,7 @@
 <body>
 
     <!-- Sidebar Overlay -->
-    <div id="sideBarOverlay">
-      
-    </div>
+    <div id="sideBarOverlay"></div>
 
     <!-- Sidebar -->
     <div id="sidebar">
@@ -82,9 +80,9 @@
           <div class="header-left">
             <img style="padding: 1.8rem; margin-right: 1rem;" src="images/logo.svg" alt="site-logo" />
             <div class="header-option">
-              <a href="#">Features</a> &nbsp<img src="images/icon-arrow-down.svg" alt="down-arrow">
+              <a href="#" onclick="toggleFeaturesDrop()">Features</a> &nbsp<img src="images/icon-arrow-down.svg" alt="down-arrow">
 
-              <!-- <div id="features-dropdown">
+              <div id="features-dropdown">
                 <div class="accordion-item">
                   <img src="images/icon-todo.svg" /> &nbsp <a href="#">Todo List</a>
                 </div>
@@ -97,11 +95,24 @@
                 <div class="accordion-item">
                   <img src="images/icon-planning.svg" /> &nbsp <a href="#">Planning</a>
                 </div>
-              </div> -->
+              </div>
 
             </div>
             <div class="header-option">
-              <a href="#">Company</a> &nbsp<img src="images/icon-arrow-down.svg" alt="down-arrow">
+              <a href="#" onclick="toggleCompanyDrop()">Company</a> &nbsp<img src="images/icon-arrow-down.svg" alt="down-arrow">
+
+              <div id="company-dropdown">
+                <div class="accordion-item">
+                  <a href="#">History</a>
+                </div>
+                <div class="accordion-item">
+                  <a href="#">Our Team</a>
+                </div>
+                <div class="accordion-item">
+                  <a href="#">Blog</a>
+                </div>
+              </div>
+
             </div>
             <div class="header-option">
               <a href="#">Careers</a>
@@ -155,6 +166,44 @@
     <!-- Script for the navigation -->
     <script>
 
+      // Header Actions
+      // To toggle the features dropdown
+      function toggleFeaturesDrop() {
+        let dropdown = document.getElementById('features-dropdown');
+        if (dropdown.style.display == '' || dropdown.style.display == 'none') {
+          if (document.getElementById('company-dropdown').style.display == 'block') {
+            document.getElementById('company-dropdown').style.display = 'none';
+          }
+          dropdown.style.display = 'block';
+        } else {
+          dropdown.style.display = 'none';
+        }
+      }
+      // To toggle company dropdown
+      function toggleCompanyDrop() {
+        let dropdown = document.getElementById('company-dropdown');
+        if (dropdown.style.display == '' || dropdown.style.display == 'none') {
+          if (document.getElementById('features-dropdown').style.display == 'block') {
+            document.getElementById('features-dropdown').style.display = 'none';
+          }
+          dropdown.style.display = 'block';
+        } else {
+          dropdown.style.display = 'none';
+        }
+      }
+
+      // To toggle the Sidebar
+      function toggleSidebar() {
+        let sidebar = document.getElementById('sidebar');
+        if (sidebar.style.display == '' || sidebar.style.display == 'none') {
+          sidebar.style.display = 'block';
+          document.getElementById('sideBarOverlay').style.display = 'block';
+        } else {
+          sidebar.style.display = 'none';
+          document.getElementById('sideBarOverlay').style.display = 'none';
+        }
+      }
+
       // Sidebar Accordions
       // To toggle features Accordion in sidebar
       function toggleFeatures() {
@@ -172,18 +221,6 @@
           accordion.style.display = 'block';
         } else {
           accordion.style.display = 'none';
-        }
-      }
-
-      // To toggle the Sidebar
-      function toggleSidebar() {
-        let sidebar = document.getElementById('sidebar');
-        if (sidebar.style.display == '' || sidebar.style.display == 'none') {
-          sidebar.style.display = 'block';
-          document.getElementById('sideBarOverlay').style.display = 'block';
-        } else {
-          sidebar.style.display = 'none';
-          document.getElementById('sideBarOverlay').style.display = 'none';
         }
       }
     </script>
